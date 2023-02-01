@@ -10,7 +10,6 @@ function App() {
 
     <Navbar title="my-app"  about="about"/>
    
-  
    </>
     
    
