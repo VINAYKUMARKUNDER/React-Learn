@@ -1,23 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import styles from './App.css';
 
 function App() {
+
+  const [text, setText]=React.useState("");
+  const [todos, setTodo]= React.useState([]);
+
+  const changeHandeler=(event)=>{
+    // console.log(event.target.value);
+    setText(event.target.value);
+  }
+
+
+  const handelText=()=>{
+
+    let newTodo={
+      id: Math.random()+Date.now().toLocaleString()+text,
+      title: text,
+      status : false,
+
+    }
+
+    setTodo([...todos,newTodo])
+  }
+
+  console.log(todos)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App}>
+
+      <div>   
+        <input  value={text} onChange={changeHandeler} placeholder='add Something here'/>
+        <button onClick={handelText}>Add in todo</button>
+      </div>
+
+
+     <div>
+        {
+        todos.map((data)=> (
+        <div>
+        
+        </div>
+        ))
+        }
+      </div> 
+  
+      {/* <h1>{text}</h1> */}
     </div>
   );
 }
