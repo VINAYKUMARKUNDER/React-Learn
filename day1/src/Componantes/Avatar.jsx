@@ -1,7 +1,7 @@
  function Avatar(props){
 
     const styles ={
-       borderRadius:"50%" ,
+       borderRadius:"40%" ,
         border:"red 1px solid"
     };
     return (

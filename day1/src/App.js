@@ -1,46 +1,34 @@
 import AppCss from './App.module.css';
-import Gritting from './Componantes/Griting.jsx'
 import Avatar from './Componantes/Avatar.jsx'
-import Button  from './Componantes/Button';
+import React  from 'react';
 
 const arr =[1,2,3,4,5,6];
 const squere = arr.map((el)=> <li>{el*2}</li>);
 console.log(squere)
 
 
-const user =[
-  {
-    id :1,
-    name: "Vinay",
-    image: "https://avatars.githubusercontent.com/u/98196841?v=4"
-  },
-  {
-    id :2,
-    name: "Vinay",
-    image: "https://avatars.githubusercontent.com/u/98196841?v=4"
-  },
-  {
-    id :3,
-    name: "Vinay",
-    image: "https://avatars.githubusercontent.com/u/98196841?v=4"
-  },
-  {
-    id :4,
-    name: "Vinay",
-    image: "https://avatars.githubusercontent.com/u/98196841?v=4"
-  },
-];
 
-const userAvater= user.map((data)=> (<Avatar imgSrc={data.image} name={data.name}/>))
+
+
+
 
 function App() {
+  const [amount, setAmount] = React.useState(0);
+  const diposit =()=>{
+    setAmount(amount+100);
+  }
+
+  const withDarw=()=>{
+    setAmount(amount-100);
+  }
+
   return (
    
   <div className={AppCss.main}>
-  <h1 className='styles.App'>I am Vinay Kumar</h1>
-   <Gritting/> 
-   {userAvater}
-   <Button name="I am a Button"/>
+ 
+    <h1>Amount is {amount}</h1>
+    <button onClick={diposit}>Diposit 100</button>
+    <button onClick={withDarw}>withDraw 100</button>
 
   </div>
   );
