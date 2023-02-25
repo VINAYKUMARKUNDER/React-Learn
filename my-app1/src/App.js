@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React from "react";
 
 function App() {
+  const [amount, setAmount]=React.useState(0);
+  const [time, setTime]=React.useState(0);
+
+  const withdraw=()=>{
+    setAmount(amount-100);
+  }
+
+  const deposit=()=>{
+    setAmount(amount+100);
+  }
+
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+   <div className="App">
+      <h1 id='amount'>Amount: {amount}</h1>
+      <button id='deposit' onClick={deposit}>Deposit 100ru.</button>
+      <button id='withdraw' onClick={withdraw}>Withdraw 100ru.</button>
+
+      <h1>Time: {time}</h1>
+      
+   </div>
+
+    
+
+    </>
   );
 }
 
