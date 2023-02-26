@@ -30,6 +30,11 @@ export default function app() {
         <h1>{user.pincode}</h1>
         </div>
       <button onClick={showUserData}>click</button>
+
+
+
+
+      
   </>)
 
 }
