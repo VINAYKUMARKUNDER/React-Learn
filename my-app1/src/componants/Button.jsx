@@ -2,11 +2,12 @@
 export default function Button(props){
     const {text}=props;
     const style={
-        backgraundColor:"red"
+        color:"tomato",
+        padding:"1rem"
     }
 
     return (<>
-        <div style={style}>{text}</div>
+        <button style={style}>{text}</button>
     </>)
 
 }
