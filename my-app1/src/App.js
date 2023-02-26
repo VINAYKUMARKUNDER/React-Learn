@@ -22,7 +22,13 @@ export default function app() {
     }
   return (<>
       <Button text="click me"/>
-        <div>{user.name}</div>
+        <div>
+        <h1>{user.name}</h1>
+        <h1>{user.address}</h1>
+        <h1>{user.district}</h1>
+        <h1>{user.mobile}</h1>
+        <h1>{user.pincode}</h1>
+        </div>
       <button onClick={showUserData}>click</button>
   </>)
 
