@@ -8,6 +8,8 @@ export default function app() {
 
     const [user,setUser]=react.useState({});
 
+    
+
   const userDetails={
     name:"Vinay Kumar",
     address:"Songardha",
@@ -20,6 +22,8 @@ export default function app() {
       setUser(userDetails);
       // return userDetails;
     }
+
+
   return (<>
       <Button text="click me"/>
         <div>
@@ -32,6 +36,7 @@ export default function app() {
       <button onClick={showUserData}>click</button>
 
 
+      <button>click me and  see magic</button>
 
 
       
