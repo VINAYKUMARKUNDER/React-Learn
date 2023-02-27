@@ -15,6 +15,7 @@ export default function App() {
     
     <div className='App'>
     <h1>Count: {number}</h1>
+    
 
     <button disabled={number===10} onClick={()=>setNumber(number+1)}>Inc</button>
     <button disabled={number<=0} onClick={()=>setNumber(number-1)}>Dic</button>
