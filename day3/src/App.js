@@ -7,8 +7,8 @@ export default function App() {
 
   const [number,setNumber]=React.useState(0);
   
-  const incriment=3
-  const dicriment=0
+  // const incriment=setNumber(number+1)
+  // const dicriment=0
   return (
   
 
@@ -16,8 +16,9 @@ export default function App() {
     <div className='App'>
     <h1>Count: {number}</h1>
 
-    <button onClick={incriment}>Inc</button>
-    <button onClick={dicriment}>Dic</button>
+    <button disabled={number===10} onClick={()=>setNumber(number+1)}>Inc</button>
+    <button disabled={number<=0} onClick={()=>setNumber(number-1)}>Dic</button>
+    <button disabled={number===0 || number ===10} onClick={()=>setNumber(0)}>Reset</button>
 
     </div>
    
