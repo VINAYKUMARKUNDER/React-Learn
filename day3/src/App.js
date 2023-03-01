@@ -38,12 +38,11 @@ export default function App() {
     
         <div>
         {posts.forEach((post)=>{
-          // console.log(post)
-          <div>
-            <h2>{post.id}</h2>
-            <p>{post.title}</p>
-            <p>{post.body}</p>
-          </div>
+         { console.log(post.id)}
+          
+            <h2>post.id</h2>
+           
+          
         })}
   </div>
     
