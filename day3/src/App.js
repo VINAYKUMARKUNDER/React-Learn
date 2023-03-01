@@ -2,28 +2,55 @@
 import './App.css';
 import React from "react"
 
+  const showData=()=>{
+    return fetch('https://jsonplaceholder.typicode.com/posts')
+        .then((res)=>{
+          return res.json();
+        })
+  }
+
 export default function App() {
+  const [posts,setPosts]=React.useState([]);
+
+  const showPostHandler=async ()=>{
+    try {
+      const data = await showData();
+      // console.log(data);
+      setPosts(data);
+    } catch (error) {
+      console.log(error)
+    }
+    
+  }
+
+  // const style={
+  //   border:"1px solid black",
+
+  // }
 
 
-  const [number,setNumber]=React.useState(0);
-  
-  // const incriment=setNumber(number+1)
-  // const dicriment=0
-  return (
-  
+  return (<div className='App'>
+
+      <h2>Posts</h2>
+      <button onClick={showPostHandler}>Clik me</button>
+      <p>{posts}</p>
 
     
-    <div className='App'>
-    <h1>Count: {number}</h1>
+        <div>
+        {posts.forEach((post)=>{
+          // console.log(post)
+          <div>
+            <h2>{post.id}</h2>
+            <p>{post.title}</p>
+            <p>{post.body}</p>
+          </div>
+        })}
+  </div>
     
+  
+  </div>);
 
-    <button disabled={number===10} onClick={()=>setNumber(number+1)}>Inc</button>
-    <button disabled={number<=0} onClick={()=>setNumber(number-1)}>Dic</button>
-    <button disabled={number===0 || number ===10} onClick={()=>setNumber(0)}>Reset</button>
-
-    </div>
-   
-  );
+ 
 }
 
 
