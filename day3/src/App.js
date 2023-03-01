@@ -33,7 +33,7 @@ export default function App() {
 
       <h2>Posts</h2>
       <button onClick={showPostHandler}>Clik me</button>
-      <p>{posts}</p>
+      {/* <p>{posts}</p> */}
 
     
         <div>
