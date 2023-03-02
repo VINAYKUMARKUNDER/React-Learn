@@ -1,55 +1,41 @@
 
 import './App.css';
 import React from "react"
+import Item from './Componantes/Item';
 
-  const showData=()=>{
-    return fetch('https://jsonplaceholder.typicode.com/posts')
-        .then((res)=>{
-          return res.json();
-        })
-  }
+export default function App(){
+    const itemData=[
+        {
+            itemId:1,
+            itemName:"Noddels",
+            itemPrice:30,
+            itemCount:1
+        },
+        {
+            itemId:2,
+            itemName:"Biryani",
+            itemPrice:90,
+            itemCount:1
+        },
+        {
+            itemId:3,
+            itemName:"Chips",
+            itemPrice:10,
+            itemCount:1
+        }
 
-export default function App() {
-  const [posts,setPosts]=React.useState([]);
-
-  const showPostHandler=async ()=>{
-    try {
-      const data = await showData();
-      // console.log(data);
-      setPosts(data);
-    } catch (error) {
-      console.log(error)
-    }
-    
-  }
-
-  // const style={
-  //   border:"1px solid black",
-
-  // }
-
-
-  return (<div className='App'>
-
-      <h2>Posts</h2>
-      <button onClick={showPostHandler}>Clik me</button>
-      {/* <p>{posts}</p> */}
-
-    
-        <div>
-        {posts.forEach((post)=>{
-         { console.log(post.id)}
-          
-            <h2>post.id</h2>
+    ]
+    return (<>
            
-          
-        })}
-  </div>
-    
-  
-  </div>);
+           {/* <div><Item itemName="Noddels" itemPrice={30}/></div> */}
 
- 
+          <div> {itemData.forEach((data)=>{
+            // <Item itemName={data.itemName} itemPrice={data.itemPrice}/>
+            <ul>
+                <li key={data.itemId}>{data.itemName}</li>
+            </ul>
+            // console.log(data)
+           })}
+    </div>
+    </>);
 }
-
-
