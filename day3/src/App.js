@@ -25,17 +25,19 @@ export default function App(){
         }
 
     ]
-    return (<>
-           
-           {/* <div><Item itemName="Noddels" itemPrice={30}/></div> */}
 
-          <div> {itemData.forEach((data)=>{
-            // <Item itemName={data.itemName} itemPrice={data.itemPrice}/>
-            <ul>
-                <li key={data.itemId}>{data.itemName}</li>
-            </ul>
-            // console.log(data)
-           })}
-    </div>
-    </>);
+    const style={
+        border:"2px solid orange",
+        padding:"30px",
+        margin:"30px"
+    }
+    return (
+        <div className="container" style={style}>     
+        {itemData.map(name => (  
+          <div key={name.itemId}>  
+            <Item itemName={name.itemName} itemPrice={name.itemPrice}/>  
+          </div>  
+        ))}  
+    </div>  
+    );
 }
