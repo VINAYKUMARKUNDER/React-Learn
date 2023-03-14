@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import Avatar from './Componantes/Avatar';
 
 function App() {
     
@@ -8,7 +9,7 @@ function App() {
 
   return (
     <>
-      
+      <Avatar/>
     
     </>
   );
